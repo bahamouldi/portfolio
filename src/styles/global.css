@@ -1,0 +1,397 @@
+/* Global styles for a modern, dark, cyber-inspired portfolio */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #10131a 0%, #1a1f2e 50%, #0a0e17 100%);
+  color: #e6eaf3;
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: backgroundShift 20s ease-in-out infinite alternate;
+  scroll-behavior: smooth;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 16px 32px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(16, 19, 26, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(90, 209, 255, 0.2);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.navbar-logo {
+  color: #5ad1ff;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5em;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #ffffff;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.navbar-menu button {
+  background: none;
+  border: none;
+  color: #e6eaf3;
+  font-size: 1em;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-menu button:hover {
+  color: #5ad1ff;
+  transform: scale(1.1);
+}
+
+h1, h2, h3 {
+  color: #5ad1ff;
+  margin-bottom: 0.5em;
+  font-family: 'Orbitron', monospace;
+  text-shadow: 0 0 10px #5ad1ff;
+}
+
+section {
+  margin-bottom: 48px;
+  background: rgba(24, 28, 37, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5), 0 0 20px rgba(90, 209, 255, 0.1);
+  padding: 32px 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(90, 209, 255, 0.2);
+  animation: fadeInUp 1s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7), 0 0 30px rgba(90, 209, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(10, 14, 23, 0.8) 60%, rgba(26, 42, 58, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%235ad1ff" opacity="0.1"/></svg>') repeat;
+  animation: particleFloat 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #5ad1ff;
+  margin-bottom: 16px;
+  object-fit: cover;
+  background: #222;
+  animation: glowPulse 3s ease-in-out infinite alternate;
+  box-shadow: 0 0 20px rgba(90, 209, 255, 0.5);
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 20px rgba(90, 209, 255, 0.5); }
+  100% { box-shadow: 0 0 30px rgba(90, 209, 255, 0.8), 0 0 40px rgba(90, 209, 255, 0.3); }
+}
+
+.hero h1 {
+  font-size: 2.2em;
+  margin: 0.2em 0 0.1em 0;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px #5ad1ff; }
+  100% { text-shadow: 0 0 20px #5ad1ff, 0 0 30px #5ad1ff; }
+}
+
+.hero h2 {
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero p a {
+  color: #5ad1ff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hero p a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #5ad1ff;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.skill-card {
+  flex: 1 1 220px;
+  background: rgba(35, 40, 58, 0.9);
+  border-radius: 12px;
+  padding: 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  min-width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(90, 209, 255, 0.1);
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 20px rgba(90, 209, 255, 0.3);
+}
+
+.skill-card h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover h3 {
+  color: #ffffff;
+}
+
+.skill-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.skill-card svg {
+  color: #5ad1ff;
+  font-size: 1.6em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-card:hover svg {
+  transform: rotate(10deg);
+  color: #ffffff;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.project-card {
+  flex: 1 1 350px;
+  background: rgba(35, 40, 58, 0.9);
+  border-radius: 12px;
+  padding: 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(90, 209, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 30px rgba(90, 209, 255, 0.3);
+}
+
+.project-card h3 {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: #ffffff;
+}
+
+.project-date {
+  color: #5ad1ff;
+  font-size: 0.95em;
+}
+
+.project-stack {
+  font-size: 0.95em;
+  color: #b0c4d4;
+}
+
+.project-result {
+  color: #5ad1ff;
+  font-weight: 500;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.experience-card {
+  background: rgba(35, 40, 58, 0.9);
+  border-radius: 12px;
+  padding: 18px 14px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(90, 209, 255, 0.1);
+}
+
+.experience-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 20px rgba(90, 209, 255, 0.3);
+}
+
+.experience-date {
+  color: #5ad1ff;
+  font-size: 0.95em;
+}
+
+.certifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.certifications li {
+  background: rgba(35, 40, 58, 0.9);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  color: #e6eaf3;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(90, 209, 255, 0.1);
+}
+
+.certifications li:hover {
+  transform: scale(1.02);
+  background: rgba(45, 50, 68, 0.9);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(90, 209, 255, 0.2);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.contact-links a {
+  color: #5ad1ff;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(35, 40, 58, 0.5);
+}
+
+.contact-links a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+  background: rgba(90, 209, 255, 0.1);
+  box-shadow: 0 0 10px rgba(90, 209, 255, 0.3);
+}
+
+@media (max-width: 700px) {
+  .skills-list, .projects-list {
+    flex-direction: column;
+    gap: 0;
+  }
+  .app-container {
+    padding: 12px 2px;
+  }
+  section {
+    padding: 18px 6px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #10131a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5ad1ff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4ba8d1;
+}
+
