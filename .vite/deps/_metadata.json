@@ -1,0 +1,49 @@
+{
+  "hash": "c9ed8c11",
+  "configHash": "4a86f95e",
+  "lockfileHash": "2ca3cca0",
+  "browserHash": "d72bcfa2",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "a4f6e0da",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "5613342f",
+      "needsInterop": true
+    },
+    "@tsparticles/react": {
+      "src": "../../node_modules/@tsparticles/react/dist/index.js",
+      "file": "@tsparticles_react.js",
+      "fileHash": "dc87c211",
+      "needsInterop": false
+    },
+    "@tsparticles/slim": {
+      "src": "../../node_modules/@tsparticles/slim/browser/index.js",
+      "file": "@tsparticles_slim.js",
+      "fileHash": "cf71125e",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.esm.js",
+      "file": "react-icons_fa.js",
+      "fileHash": "153ab440",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-DYL5MU57": {
+      "file": "chunk-DYL5MU57.js"
+    },
+    "chunk-WNPTCGAH": {
+      "file": "chunk-WNPTCGAH.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
+    }
+  }
+}
