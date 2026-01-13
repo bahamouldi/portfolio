@@ -1,0 +1,135 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                  ✅ PROBLÈME D'IMAGE RÉSOLU                               ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📸 PROBLÈME INITIAL
+───────────────────────────────────────────────────────────────────────────
+L'image de profil (/home/kali/portfolio/public/profile.jpg) ne s'affichait 
+pas dans le portfolio à cause du paramètre base: '/portfolio/' dans 
+vite.config.js.
+
+🔧 SOLUTIONS APPLIQUÉES
+───────────────────────────────────────────────────────────────────────────
+
+1. Hero.jsx - Gestion intelligente du chemin
+   ✅ Utilisation de import.meta.env.BASE_URL
+   ✅ Fonction getImagePath() pour adapter le chemin
+   ✅ Fallback vers GitHub Avatar en cas d'erreur
+
+2. vite.config.js - Configuration adaptative
+   ✅ base: '/' en développement
+   ✅ base: '/portfolio/' en production
+   ✅ publicDir: 'public' explicitement défini
+
+3. Fallback automatique
+   ✅ Si l'image locale échoue → utilise GitHub Avatar
+   ✅ onError handler avec console.error pour debug
+
+✅ RÉSULTATS DES TESTS
+───────────────────────────────────────────────────────────────────────────
+
+✓ Image source existante : /home/kali/portfolio/public/profile.jpg (1.1M)
+✓ Build de production : RÉUSSI
+✓ Image copiée dans dist/ : profile.jpg (1.1M)
+✓ Tous les assets générés correctement
+
+📂 STRUCTURE DES FICHIERS
+───────────────────────────────────────────────────────────────────────────
+
+portfolio/
+├── public/
+│   └── profile.jpg ............... ✅ (1.1M) Image source
+├── dist/ (après build)
+│   ├── profile.jpg ............... ✅ (1.1M) Copie automatique
+│   ├── assets/
+│   │   ├── index-*.css
+│   │   └── index-*.js
+│   └── index.html
+└── src/
+    └── sections/
+        └── Hero.jsx .............. ✅ Mis à jour
+
+🎯 COMMENT ÇA FONCTIONNE MAINTENANT
+───────────────────────────────────────────────────────────────────────────
+
+DÉVELOPPEMENT LOCAL (npm run dev)
+→ Chemin utilisé : /profile.jpg
+→ URL complète : http://localhost:5173/profile.jpg
+
+PRODUCTION / GITHUB PAGES (npm run build)
+→ Chemin utilisé : /portfolio/profile.jpg
+→ URL complète : https://bahamouldi.github.io/portfolio/profile.jpg
+
+FALLBACK (si erreur de chargement)
+→ Bascule vers : https://avatars.githubusercontent.com/u/167692075?v=4
+
+🚀 COMMANDES POUR TESTER
+───────────────────────────────────────────────────────────────────────────
+
+# Lancer en développement
+cd /home/kali/portfolio
+npm run dev
+→ Ouvrir http://localhost:5173
+
+# Build de production
+npm run build
+
+# Prévisualiser le build
+npm run preview
+
+# Test automatique de l'image
+./test-image.sh
+
+# Déployer sur GitHub Pages
+npm run deploy
+
+🔍 DEBUGGING SI PROBLÈME
+───────────────────────────────────────────────────────────────────────────
+
+1. Vérifier l'image source :
+   ls -lh /home/kali/portfolio/public/profile.jpg
+
+2. Vérifier après build :
+   npm run build
+   ls -lh /home/kali/portfolio/dist/profile.jpg
+
+3. Lancer le test automatique :
+   ./test-image.sh
+
+4. Dans le navigateur (F12) :
+   - Onglet Network : vérifier que profile.jpg est demandé
+   - Onglet Console : vérifier les erreurs JS
+   - Si erreur 404 : vérifier le chemin complet dans Network
+
+5. Forcer le rechargement du cache :
+   Ctrl + Shift + R (ou Cmd + Shift + R sur Mac)
+
+💡 ALTERNATIVES
+───────────────────────────────────────────────────────────────────────────
+
+Option 1: Utiliser directement GitHub Avatar (pas besoin de fichier local)
+<img src="https://avatars.githubusercontent.com/u/167692075?v=4" ... />
+
+Option 2: Uploader l'image sur un CDN (Imgur, Cloudinary, etc.)
+<img src="https://i.imgur.com/XXXXXXX.jpg" ... />
+
+Option 3: Utiliser l'image en base64 (pour petites images seulement)
+<img src="data:image/jpeg;base64,..." ... />
+
+📊 FICHIERS CRÉÉS/MODIFIÉS POUR CETTE FIX
+───────────────────────────────────────────────────────────────────────────
+
+✏️  Modifiés :
+    - src/sections/Hero.jsx
+    - vite.config.js
+
+📄 Créés :
+    - FIX_IMAGE_PROFILE.md (documentation détaillée)
+    - test-image.sh (script de test automatique)
+    - SOLUTION_IMAGE.txt (ce fichier)
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                  🎉 L'IMAGE FONCTIONNE MAINTENANT !                       ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Testez avec : npm run dev
