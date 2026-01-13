@@ -6,10 +6,10 @@ function About() {
       <h2>À propos</h2>
       <div className="about-content">
         <p>
-          Ingénieur IA & Sécurité passionné, je conçois des <strong>solutions robustes et innovantes</strong> qui allient <strong>Machine Learning</strong>, <strong>sécurité offensive</strong>, et <strong>architectures multi-agents distribuées</strong>. 
+          Je suis <strong>Baha Eddine Belhaj Mouldi</strong>, ingénieur passionné par la <strong>cybersécurité</strong> et l'<strong>intelligence artificielle</strong>. Je conçois des solutions robustes et innovantes qui allient <strong>Machine Learning</strong>, <strong>sécurité offensive</strong>, et <strong>architectures multi-agents distribuées</strong>.
         </p>
         <p>
-          Mon parcours à l'<strong>ENIT (École Nationale d'Ingénieurs de Tunis)</strong> et mes expériences pratiques en cybersécurité et intelligence artificielle m'ont permis de piloter des <em>projets d'envergure</em>, de l'automatisation avancée de la détection d'attaques à l'orchestration complexe d'agents IA distribués.
+          Mon parcours à l'<strong>ENIT (École Nationale d'Ingénieurs de Tunis)</strong> et mes expériences pratiques m'ont permis de piloter des <em>projets d'envergure</em>, de l'automatisation avancée de la détection d'attaques à l'orchestration complexe d'agents IA distribués.
         </p>
         <p>
           Je suis particulièrement intéressé par les <em>systèmes de détection d'intrusion</em>, le <em>machine learning appliqué à la sécurité</em>, et les <em>architectures multi-agents</em>. Mon objectif est de créer des solutions qui renforcent la sécurité des systèmes tout en exploitant le potentiel de l'intelligence artificielle.
