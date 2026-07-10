@@ -11,9 +11,9 @@ function Contact() {
         collaborations, stages, projets innovants ou simplement pour échanger sur la tech !
       </p>
       <div className="contact-links">
-        <a href="mailto:bahaeddine.belhajmouldi@etudiant-enit.utm.tn" className="contact-link-item">
+        <a href="mailto:bahaeddine.belhajmouldi@gmail.com" className="contact-link-item">
           <FaEnvelope /> 
-          <span>bahaeddine.belhajmouldi@etudiant-enit.utm.tn</span>
+          <span>bahaeddine.belhajmouldi@gmail.com</span>
         </a>
         <a href="https://linkedin.com/in/bahamouldi" target="_blank" rel="noopener noreferrer" className="contact-link-item">
           <FaLinkedin /> 

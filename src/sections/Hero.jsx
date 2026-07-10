@@ -47,7 +47,7 @@ function Hero() {
         <div className="hero-socials">
           <a href="https://linkedin.com/in/bahamouldi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
           <a href="https://github.com/bahamouldi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
-          <a href="mailto:bahaeddine.belhajmouldi@etudiant-enit.utm.tn" aria-label="Email"><FaEnvelope /></a>
+          <a href="mailto:bahaeddine.belhajmouldi@gmail.com" aria-label="Email"><FaEnvelope /></a>
         </div>
       </div>
     </section>
