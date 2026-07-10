@@ -118,6 +118,18 @@ const projects = [
     color: '#3b82f6',
   },
   {
+    title: 'Fedi Phone — Boutique e-commerce',
+    category: 'Dev & Cloud',
+    date: '2026',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'Docker'],
+    description:
+      "Boutique e-commerce full-stack de produits technologiques (smartphones, ordinateurs, accessoires). Authentification JWT, panier, wishlist, recherche temps réel, interface admin complète (CRUD produits/commandes/utilisateurs), intégration WhatsApp pour confirmation des commandes.",
+    result: 'Application full-stack complète avec mode sombre, animations Framer Motion et design responsive mobile-first.',
+    github: 'https://github.com/bahamouldi/Fedi_Phone',
+    icon: FaMobileAlt,
+    color: '#06b6d4',
+  },
+  {
     title: 'Oumaya — Application mobile',
     category: 'Dev & Cloud',
     date: '2025',
