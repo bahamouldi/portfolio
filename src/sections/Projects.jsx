@@ -1,117 +1,211 @@
-import React from 'react';
-import { FaGithub, FaShieldAlt, FaRobot, FaHotel, FaLock, FaFilm, FaHeartbeat, FaComments } from 'react-icons/fa';
+import React, { useState } from 'react';
+import {
+  FaGithub, FaShieldAlt, FaRobot, FaHotel, FaLock, FaFilm,
+  FaHeartbeat, FaComments, FaChartLine, FaCubes, FaMobileAlt, FaArrowRight,
+  FaBroadcastTower,
+} from 'react-icons/fa';
 
 const projects = [
   {
-    title: "Détection d'attaques web par Data Mining",
-    date: '2025',
-    stack: 'Python, Pandas, Scikit-learn, SHAP, AWS CloudWatch',
-    description: "Pipeline complet de data mining sur AWS CloudWatch avec feature engineering avancé, clustering K-Means optimisé et détection automatique d'attaques web. Interprétation des clusters avec SHAP pour une analyse approfondie.",
-    result: '3 clusters optimisés, 39 attaques détectées (13.8% du trafic), précision 94%.',
-    github: 'https://github.com/bahamouldi/WebSec',
+    title: 'BeeWAF — Web Application Firewall Intelligent',
+    category: 'Sécurité',
+    date: '2026 · PFE · Digital Power Consulting',
+    featured: true,
+    tags: ['FastAPI', 'Machine Learning', 'Docker', 'Kubernetes', 'ELK'],
+    description:
+      "Projet de fin d'études réalisé chez Digital Power Consulting. Pare-feu applicatif d'entreprise combinant 10 041 règles de détection et 3 modèles ML (RandomForest, GradientBoosting, IsolationForest). 27 modules de sécurité : anti-bot, DLP, anti-DDoS, virtual patching (37 CVE) et corrélation d'attaques.",
+    result: 'Score 98.2/100 · 0 % de faux positifs · conformité 7 frameworks (OWASP, PCI DSS, GDPR, NIST, ISO 27001…).',
+    github: 'https://github.com/bahamouldi/beewaf_final',
     icon: FaShieldAlt,
-    color: '#dc2626',
+    color: '#f59e0b',
+  },
+  {
+    title: 'Plateforme d’analyse financière — SFBT',
+    category: 'Data & BI',
+    date: '2026 · PFE',
+    featured: true,
+    tags: ['Python', 'Data Warehouse', 'BI', 'Machine Learning', 'MSI 20000'],
+    description:
+      "Solution décisionnelle pour l'analyse de la performance financière : entrepôt de données, calcul automatisé des ratios MSI 20000, tableaux de bord BI et modèles prédictifs sur les indicateurs clés.",
+    result: 'Pipeline BI complet, automatisation du reporting financier et prévision des indicateurs.',
+    github: 'https://github.com/bahamouldi/pfe_malik',
+    icon: FaChartLine,
+    color: '#10b981',
+  },
+  {
+    title: 'Revenue Assurance Dashboard — Tunisie Telecom',
+    category: 'Data & BI',
+    date: '2026',
+    featured: true,
+    tags: ['Streamlit', 'PostgreSQL', 'Data Warehouse', 'Plotly', 'RAG', 'Gemini'],
+    description:
+      "Plateforme d'assurance revenus détectant les écarts entre les systèmes réseau (NE) et facturation (TAX) sur 4 domaines (Voix/SMS, Data, Recharge, SMS Plus) : entrepôt de données en étoile, agents d'analyse et de prévision, et chatbot conversationnel RAG.",
+    result: '~900 000 lignes analysées (Q1 2025 → Q1 2026), prévisions 3–30 jours, cartes et tableaux de bord interactifs.',
+    github: 'https://github.com/bahamouldi/tunisie_telecom',
+    icon: FaBroadcastTower,
+    color: '#6366f1',
   },
   {
     title: 'Système multi-agent pour la détection de vulnérabilités',
+    category: 'IA',
     date: '2025',
-    stack: 'Azure AI Foundry, Python, Multi-Agent Architecture',
-    description: "Architecture distribuée d'agents intelligents pour la collecte et corrélation d'événements de sécurité en temps réel. Orchestration avancée et système d'alerting automatique pour une détection proactive des menaces.",
-    result: 'Architecture légère et scalable, déploiement multi-serveurs, réduction du temps de détection de 60%.',
+    tags: ['Python', 'Multi-Agent', 'A2A', 'Azure AI'],
+    description:
+      "Architecture distribuée d'agents intelligents (protocole agent-to-agent) pour la collecte et la corrélation d'événements de sécurité en temps réel, avec orchestration et alerting automatiques.",
+    result: 'Architecture légère et scalable, détection proactive des menaces.',
     github: 'https://github.com/bahamouldi/remote-agents-a2a',
     icon: FaRobot,
     color: '#7c3aed',
   },
   {
-    title: "Système de recommandation d'hôtels basé sur RAG (LLM)",
+    title: "Recommandation d'hôtels basée sur RAG (LLM)",
+    category: 'IA',
     date: '2025',
-    stack: 'Python, Azure AI, LangChain, GPT-4, RAG',
-    description: "Système intelligent utilisant Retrieval-Augmented Generation pour fournir des recommandations d'hôtels ultra-personnalisées basées sur l'analyse sémantique des reviews utilisateurs et des préférences contextuelles.",
-    result: 'Recommandations contextuelles précises, orchestration multi-agents efficace, satisfaction utilisateur +85%.',
+    tags: ['Python', 'RAG', 'LangChain', 'LLM', 'Azure AI'],
+    description:
+      "Système de Retrieval-Augmented Generation fournissant des recommandations d'hôtels personnalisées à partir de l'analyse sémantique des avis utilisateurs et des préférences contextuelles.",
+    result: 'Recommandations contextuelles précises et orchestration multi-agents efficace.',
     github: 'https://github.com/bahamouldi/rag-hotel-recommendation',
     icon: FaHotel,
     color: '#0891b2',
   },
   {
-    title: 'WebSec — Plateforme de test de sécurité (PFA2)',
-    date: '2025',
-    stack: 'Python, OWASP ZAP, Security Testing',
-    description: "Plateforme complète d'analyse de vulnérabilités web (XSS, SQLi, CSRF) avec intégration OWASP ZAP pour des tests automatisés. Génération de rapports détaillés avec recommandations de correction.",
-    result: "Automatisation complète de l'analyse de sécurité, rapports PDF détaillés, détection de 50+ types de vulnérabilités.",
+    title: 'Système multi-agent — Feedback client',
+    category: 'IA',
+    date: '2026',
+    tags: ['Python', 'NLP', 'Sentiment Analysis', 'Machine Learning'],
+    description:
+      "Plateforme d'analyse automatique des retours clients en temps réel : NLP et analyse de sentiments pour extraire des insights actionnables et générer des recommandations d'amélioration.",
+    result: 'Analyse automatisée des feedbacks et synthèse d’insights pour la décision.',
+    github: 'https://github.com/bahamouldi/multi-agent-customer-feedback',
+    icon: FaComments,
+    color: '#2563eb',
+  },
+  {
+    title: 'WebSec — Plateforme de test de sécurité',
+    category: 'Sécurité',
+    date: '2025 · PFA2',
+    tags: ['Python', 'OWASP ZAP', 'XSS', 'SQLi'],
+    description:
+      "Application d'analyse de vulnérabilités web (XSS, SQLi, CSRF) intégrant OWASP ZAP pour des tests automatisés, avec génération de rapports détaillés et recommandations de correction.",
+    result: "Automatisation de l'analyse de sécurité et rapports détaillés.",
     github: 'https://github.com/bahamouldi/WebSec',
     icon: FaLock,
     color: '#ea580c',
   },
   {
-    title: 'BeeWAF - Web Application Firewall',
+    title: 'Healthcare Ontology — Ontologie médicale',
+    category: 'Data & BI',
     date: '2026',
-    stack: 'Python, Security, Pattern Matching',
-    description: "Développement d'un WAF personnalisé pour la protection en temps réel contre les attaques web courantes. Système de filtrage intelligent basé sur des règles adaptatives et machine learning.",
-    result: 'Filtrage efficace des requêtes malveillantes, protection multi-couches, amélioration de la sécurité de 95%.',
-    github: 'https://github.com/bahamouldi/beewaf',
-    icon: FaShieldAlt,
-    color: '#eab308',
-  },
-  {
-    title: 'Système de Gestion Cinéma',
-    date: '2025',
-    stack: 'Java, Spring Boot, JPA, MySQL, REST API',
-    description: "Application enterprise complète pour la gestion d'un cinéma avec architecture microservices. Réservation en temps réel, gestion des films, séances, paiements et statistiques avancées.",
-    result: 'Interface utilisateur intuitive, API RESTful robuste, gestion optimisée des réservations et inventaires.',
-    github: 'https://github.com/bahamouldi/cinema',
-    icon: FaFilm,
-    color: '#be123c',
-  },
-  {
-    title: 'Healthcare Ontology - Ontologie médicale',
-    date: '2026',
-    stack: 'Python, OWL, RDF, Semantic Web, SPARQL',
-    description: "Développement d'une ontologie sémantique avancée pour le domaine de la santé. Facilite l'organisation, la recherche et l'interopérabilité des connaissances médicales entre systèmes hétérogènes.",
-    result: 'Structure sémantique enrichie, interopérabilité accrue de 80%, requêtes SPARQL optimisées.',
+    tags: ['Python', 'OWL', 'RDF', 'SPARQL', 'Semantic Web'],
+    description:
+      "Ontologie sémantique pour le domaine de la santé facilitant l'organisation, la recherche et l'interopérabilité des connaissances médicales entre systèmes hétérogènes.",
+    result: 'Structure sémantique enrichie et requêtes SPARQL optimisées.',
     github: 'https://github.com/bahamouldi/healthcare_ontology',
     icon: FaHeartbeat,
     color: '#16a34a',
   },
   {
-    title: 'Système Multi-Agent Feedback Client',
+    title: 'Architecture Microservices',
+    category: 'Dev & Cloud',
     date: '2026',
-    stack: 'Python, NLP, Machine Learning, Sentiment Analysis',
-    description: "Plateforme intelligente d'analyse automatique des feedbacks clients en temps réel. Utilise NLP avancé et analyse de sentiments pour extraire des insights actionnables et générer des recommandations.",
-    result: "Analyse automatisée avec précision 92%, recommandations d'amélioration basées sur l'IA, ROI +150%.",
-    github: 'https://github.com/bahamouldi/multi-agent-customer-feedback',
-    icon: FaComments,
-    color: '#2563eb',
+    tags: ['TypeScript', 'Node.js', 'Microservices', 'REST API'],
+    description:
+      "Conception d'une application distribuée en microservices : services découplés, communication via API REST et organisation modulaire orientée scalabilité.",
+    result: 'Architecture modulaire, découplée et maintenable.',
+    github: 'https://github.com/bahamouldi/microservise',
+    icon: FaCubes,
+    color: '#3b82f6',
+  },
+  {
+    title: 'Oumaya — Application mobile',
+    category: 'Dev & Cloud',
+    date: '2025',
+    tags: ['Flutter', 'Dart', 'Mobile'],
+    description:
+      "Application mobile cross-platform développée avec Flutter, avec une interface soignée et une logique applicative structurée.",
+    result: 'Application mobile multiplateforme (iOS / Android).',
+    github: 'https://github.com/bahamouldi/Oumaya',
+    icon: FaMobileAlt,
+    color: '#06b6d4',
+  },
+  {
+    title: 'Système de gestion de cinéma',
+    category: 'Dev & Cloud',
+    date: '2025',
+    tags: ['Java', 'Spring Boot', 'JPA', 'MySQL'],
+    description:
+      "Application de gestion d'un cinéma : réservation, gestion des films et des séances, paiements et statistiques, exposée via une API RESTful.",
+    result: 'API REST robuste et gestion optimisée des réservations.',
+    github: 'https://github.com/bahamouldi/cinema',
+    icon: FaFilm,
+    color: '#be123c',
   },
 ];
 
+const categories = ['Tous', 'Sécurité', 'IA', 'Data & BI', 'Dev & Cloud'];
+
 function Projects() {
+  const [filter, setFilter] = useState('Tous');
+  const visible = filter === 'Tous' ? projects : projects.filter((p) => p.category === filter);
+
   return (
     <section id="projects" className="projects">
       <h2>Projets techniques</h2>
       <p className="section-subtitle">
-        Découvrez mes réalisations en cybersécurité, intelligence artificielle et développement full-stack
+        Cybersécurité, intelligence artificielle, data et développement — sélection de réalisations clés.
       </p>
+
+      <div className="project-filters">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            className={`filter-btn ${filter === cat ? 'active' : ''}`}
+            onClick={() => setFilter(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
       <div className="projects-list">
-        {projects.map((proj, idx) => {
-          const IconComponent = proj.icon;
+        {visible.map((proj, idx) => {
+          const Icon = proj.icon;
           return (
-            <div className="project-card" key={idx}>
-              <div className="project-icon-wrapper" style={{ backgroundColor: proj.color }}>
-                <IconComponent className="project-icon" />
+            <article
+              className={`project-card ${proj.featured ? 'featured' : ''}`}
+              key={idx}
+              style={{ '--accent-color': proj.color }}
+            >
+              <div className="project-head">
+                <span className="project-icon-badge" style={{ background: proj.color }}>
+                  <Icon />
+                </span>
+                <div className="project-head-meta">
+                  <span className="project-category">{proj.category}</span>
+                  <span className="project-date">{proj.date}</span>
+                </div>
+                {proj.featured && <span className="featured-badge">★ Phare</span>}
               </div>
+
               <div className="project-content">
                 <h3>{proj.title}</h3>
-                <span className="project-date">{proj.date}</span>
-                <p className="project-stack"><strong>Stack:</strong> {proj.stack}</p>
                 <p className="project-description">{proj.description}</p>
-                <p className="project-result"><strong>Résultats:</strong> {proj.result}</p>
+                <p className="project-result"><strong>Résultats :</strong> {proj.result}</p>
+
+                <div className="project-tags">
+                  {proj.tags.map((t) => (
+                    <span className="tag" key={t}>{t}</span>
+                  ))}
+                </div>
+
                 {proj.github && (
                   <a href={proj.github} target="_blank" rel="noopener noreferrer" className="github-link">
-                    <FaGithub /> Voir sur GitHub
+                    <FaGithub /> Code source <FaArrowRight className="arrow" />
                   </a>
                 )}
               </div>
-            </div>
+            </article>
           );
         })}
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ParticlesBackground from './components/ParticlesBackground';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
@@ -10,6 +10,26 @@ import Certifications from './sections/Certifications';
 import Contact from './sections/Contact';
 
 function App() {
+  useEffect(() => {
+    const targets = document.querySelectorAll('section:not(.hero)');
+    targets.forEach((el) => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="app-container">
       <ParticlesBackground />
@@ -26,5 +46,3 @@ function App() {
 }
 
 export default App;
-
-

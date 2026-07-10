@@ -2,17 +2,27 @@ import React from 'react';
 
 const experiences = [
   {
-    title: 'Chef de projet technique — Vmate (ENIT)',
-    location: 'Tunisie',
-    date: 'Juin 2024',
+    title: 'Pentester — Freelance (temps partiel)',
+    location: 'Digital Power Consulting, Tunisie',
+    date: '2025 — présent',
     details: [
-      'Encadrement d’une équipe de 4 pour une plateforme sécurisée (web/mobile) — projet classé 1er.',
-      'Développement et intégration sécurisée, tests d’intrusion, revue de code.'
+      'Tests d’intrusion sur applications web et API : identification, exploitation et reporting de vulnérabilités (OWASP Top 10).',
+      'Recommandations de remédiation et accompagnement des équipes à la correction.',
+      'Réalisation du PFE BeeWAF (WAF intelligent) au sein de l’entreprise.'
     ]
   },
   {
-    title: 'Tunisie Télécom — Stagiaire',
-    location: 'Tunisie',
+    title: 'Détection de menaces SAP — Stagiaire',
+    location: 'Streamlink, Tunisie',
+    date: 'Juil. — Août 2025',
+    details: [
+      'Prototype de détection temps réel d’activités suspectes sur systèmes SAP.',
+      'Collecte automatisée via Python/PyRFC et envoi vers ELK pour corrélation.'
+    ]
+  },
+  {
+    title: 'Sécurité réseau — Stagiaire',
+    location: 'Tunisie Télécom, Tunisie',
     date: 'Juil. 2024',
     details: [
       'Évaluation de sécurité réseau et recherche de vulnérabilités (10+ failles identifiées).',
@@ -20,12 +30,12 @@ const experiences = [
     ]
   },
   {
-    title: 'Détection menaces SAP — Stagiaire (Streamlink)',
+    title: 'Chef de projet technique — Vmate (ENIT)',
     location: 'Tunisie',
-    date: '2025',
+    date: 'Juin 2024',
     details: [
-      'Prototype de détection temps réel d’activités suspectes sur systèmes SAP.',
-      'Collecte automatisée via Python/pyrfc et envoi vers ELK pour corrélation.'
+      'Encadrement d’une équipe de 4 pour une plateforme sécurisée (web/mobile) — projet classé 1er.',
+      'Développement et intégration sécurisée, tests d’intrusion, revue de code.'
     ]
   }
 ];
